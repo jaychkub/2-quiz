@@ -1,10 +1,18 @@
 import React from 'react';
 
-const Answer = () => {
+import './Answer.scss'
+
+import STARS from './images/stars.png'
+
+const Answer = (props) => {
+    const color = props.color
+    const value = props.value
+
     return (
-        <div>
-            
-        </div>
+        <button value={value} className={'Answer ' + color}>
+            <img src={STARS} alt="" />
+            <p>ANSWER</p>
+        </button>
     );
 }
 

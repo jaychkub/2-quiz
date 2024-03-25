@@ -1,6 +1,14 @@
 .App {
-    background-color: white;
+    background-image: url("./images/bg.jpg");
+    background-size: cover;
     width: 100svw;
     height: 100svh;
-    color: white;
+    display: flex;
+
+    .AI {
+        position: absolute;
+        bottom: 0;
+        color: white;
+        font-size: 1.25rem;
+    }
 }
