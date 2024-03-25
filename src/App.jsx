@@ -1,6 +1,6 @@
 import './App.scss'
 
-import Quiz from './componets/quiz/Quiz'
+import Quiz from './componets/Quiz/Quiz'
 
 const questions = [
   {
@@ -88,7 +88,7 @@ const questions = [
 function App() {
   return (
     <div className='App'>
-      <Quiz />
+      <Quiz question={questions[0]} />
       <p className="AI">Powered by AI.</p>
     </div>
   )
