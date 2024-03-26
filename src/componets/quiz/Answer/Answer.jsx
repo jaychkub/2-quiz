@@ -6,23 +6,24 @@ import STARS from './images/stars.png'
 import SHOOTINGSTAR from './images/shooting-star.png'
 import SATURN from './images/saturn.png'
 import MOON from './images/moon.png'
+import CONSTELLATION from './images/constellation.png'
+import EARTH from './images/earth.png'
 
-const images = {
-    'a': STARS,
-    'b': SHOOTINGSTAR,
-    'c': SATURN,
-    'd': MOON
+const style = {
+    'a': [STARS, 'pink'],
+    'b': [MOON, 'orange'],
+    'c': [EARTH, 'purple'],
+    'd': [CONSTELLATION, 'blue']
 }
 
 const Answer = (props) => {
-    const color = props.color
     const value = props.value
     const question = props.question
-    const onClick = props.onClick
+    const handleAnswer = props.handleAnswer
 
     return (
-        <button value={value} onClick={onClick} className={'Answer ' + color}>
-            <img src={images[value]} alt="" />
+        <button onClick={() => handleAnswer(value)} className={`Answer ${style[value][1]}`}>
+            <img src={style[value][0]} alt="" />
             <p>{question[value]}</p>
         </button>
     );

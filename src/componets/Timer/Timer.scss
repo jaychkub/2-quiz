@@ -1,12 +1,13 @@
 .Timer {
     position: absolute;
     right: 1rem;
-    background-color: white;
+    margin-block: auto;
     height: 67%;
     aspect-ratio: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    background-color: white;
     color: #FBB232;
 }

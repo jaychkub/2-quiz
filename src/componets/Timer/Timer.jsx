@@ -2,10 +2,16 @@ import { useState, useEffect } from 'react';
 
 import './Timer.scss'
 
-const Timer = () => {
+const Timer = ({ resetTimer }) => {
     const [timeLeft, setTimeLeft] = useState(30);
+    const [shouldReset, setShouldReset] = useState(false)
 
     useEffect(() => {
+        if (shouldReset) {
+            setTimeLeft(30)
+            setShouldReset(false)
+        }
+
         if (!timeLeft) return;
 
         const intervalID = setInterval(() => {
@@ -13,7 +19,13 @@ const Timer = () => {
         }, 1000)
 
         return () => clearInterval(intervalID);
-    }, [timeLeft])
+    }, [timeLeft, shouldReset])
+
+    useEffect(() => {
+        if (resetTimer) {
+          setShouldReset(true);
+        }
+      }, [resetTimer]);
 
     return (
         <p className='Timer'>{timeLeft}</p>

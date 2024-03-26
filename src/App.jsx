@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './App.scss'
 
 import Quiz from './componets/Quiz/Quiz'
@@ -86,9 +87,16 @@ const questions = [
 ]
 
 function App() {
+  const [questionIndex, setQuestionIndex] = useState(0)
+  const nextQuestion = () => {
+    setQuestionIndex((prevState) => {
+      return prevState + 1;
+    })
+  }
+
   return (
     <div className='App'>
-      <Quiz question={questions[0]} />
+      <Quiz question={questions[questionIndex]} nextQuestion={nextQuestion} />
       <p className="AI">Powered by AI.</p>
     </div>
   )
