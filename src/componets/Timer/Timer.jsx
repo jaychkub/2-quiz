@@ -1,35 +1,31 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-import './Timer.scss'
+import "./Timer.scss";
 
-const Timer = ({ resetTimer }) => {
-    const [timeLeft, setTimeLeft] = useState(30);
-    const [shouldReset, setShouldReset] = useState(false)
+const Timer = ({ resetTimer, nextQuestion }) => {
+	const [timeLeft, setTimeLeft] = useState(30);
+	const [shouldReset, setShouldReset] = useState(false);
 
-    useEffect(() => {
-        if (shouldReset) {
-            setTimeLeft(30)
-            setShouldReset(false)
-        }
+	useEffect(() => {
+		if (shouldReset) {
+			setTimeLeft(30);
+			setShouldReset(false);
+		}
 
-        if (!timeLeft) return;
+		if (!timeLeft) nextQuestion();
 
-        const intervalID = setInterval(() => {
-            setTimeLeft(timeLeft - 1);
-        }, 1000)
+		const intervalID = setInterval(() => {
+			setTimeLeft(timeLeft - 1);
+		}, 1000);
 
-        return () => clearInterval(intervalID);
-    }, [timeLeft, shouldReset])
+		return () => clearInterval(intervalID);
+	}, [timeLeft, shouldReset]);
 
-    useEffect(() => {
-        if (resetTimer) {
-          setShouldReset(true);
-        }
-      }, [resetTimer]);
+	useEffect(() => {
+		setShouldReset(true);
+	}, [resetTimer]);
 
-    return (
-        <p className='Timer'>{timeLeft}</p>
-    );
-}
+	return <p className="Timer">{timeLeft}</p>;
+};
 
 export default Timer;

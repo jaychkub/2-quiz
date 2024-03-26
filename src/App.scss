@@ -1,14 +1,14 @@
 .App {
-    background-image: url("./images/bg.jpg");
-    background-size: cover;
-    width: 100svw;
-    height: 100svh;
-    display: flex;
+	background-image: url("./images/bg.jpg");
+	background-size: cover;
+	width: 100svw;
+	height: 100svh;
+	display: flex;
 
-    .AI {
-        position: absolute;
-        bottom: 0;
-        color: white;
-        font-size: 1.25rem;
-    }
+	.AI {
+		position: absolute;
+		bottom: 0;
+		color: white;
+		font-size: 1.25rem;
+	}
 }
