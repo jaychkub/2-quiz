@@ -88,8 +88,12 @@ const questions = [
 ];
 
 function App() {
+	const [score, setScore] = useState(0);
 	const [questionIndex, setQuestionIndex] = useState(0);
-	const nextQuestion = () => {
+	const nextQuestion = (score) => {
+		setScore((prevState) => {
+			return prevState + score;
+		});
 		setQuestionIndex((prevState) => {
 			return prevState + 1;
 		});
@@ -103,7 +107,7 @@ function App() {
 					nextQuestion={nextQuestion}
 				/>
 			) : (
-				<Scoreboard score={5} />
+				<Scoreboard score={score} />
 			)}
 
 			<p className="AI">Powered by AI.</p>

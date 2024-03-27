@@ -2,17 +2,17 @@ import { useState, useEffect } from "react";
 
 import "./Timer.scss";
 
-const Timer = ({ resetTimer, nextQuestion }) => {
-	const [timeLeft, setTimeLeft] = useState(30);
+const Timer = ({ resetTimer, nextQuestion, penalty }) => {
+	const [timeLeft, setTimeLeft] = useState(15);
 	const [shouldReset, setShouldReset] = useState(false);
 
 	useEffect(() => {
 		if (shouldReset) {
-			setTimeLeft(30);
+			setTimeLeft(15);
 			setShouldReset(false);
 		}
 
-		if (!timeLeft) nextQuestion();
+		if (timeLeft <= 0) nextQuestion(0);
 
 		const intervalID = setInterval(() => {
 			setTimeLeft(timeLeft - 1);
@@ -24,6 +24,10 @@ const Timer = ({ resetTimer, nextQuestion }) => {
 	useEffect(() => {
 		setShouldReset(true);
 	}, [resetTimer]);
+
+	useEffect(() => {
+		if (penalty) setTimeLeft(timeLeft - 5);
+	}, [penalty]);
 
 	return <p className="Timer">{timeLeft}</p>;
 };

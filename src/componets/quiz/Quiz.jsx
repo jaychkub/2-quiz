@@ -13,9 +13,15 @@ const Quiz = (props) => {
 
 	const handleAnswer = (value) => {
 		if (value === question["correct"]) {
-			nextQuestion();
+			nextQuestion(
+				Number(document.getElementsByClassName("Timer")[0].textContent)
+			);
 			handleTimerReset();
-		}
+		} else handlePenalty();
+	};
+
+	const handlePenalty = () => {
+		return;
 	};
 
 	const handleTimerReset = () => {
@@ -29,6 +35,7 @@ const Quiz = (props) => {
 				<Timer
 					resetTimer={handleTimerReset}
 					nextQuestion={nextQuestion}
+					penalty={handlePenalty}
 				/>
 			</div>
 			<div className="Picture-Container">
