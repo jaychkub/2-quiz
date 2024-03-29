@@ -22,7 +22,7 @@
 
 .Scores-Container {
 	display: grid;
-	grid-template-rows: 0.4fr 1fr 0.5fr;
+	grid-template-rows: 0.4fr 1fr 0.4fr;
 
 	.Save-Container {
 		display: grid;
@@ -80,7 +80,7 @@
 			}
 
 			.place {
-				background-color: #fbb232;
+				background-color: rgba(0, 0, 0, 0.5);
 				width: 3rem;
 				height: 3rem;
 				display: flex;
@@ -93,6 +93,7 @@
 		}
 
 		.Gold {
+			background-color: #ffd100;
 			height: 12rem;
 			box-shadow: 1px 0 2px rgba(0, 0, 0, 0.5),
 				-1px 0 2px rgba(0, 0, 0, 0.5);
@@ -100,138 +101,64 @@
 		}
 
 		.Silver {
+			background-color: #d6d6d6;
 			height: 9rem;
 			border-bottom-left-radius: 5px;
 		}
 
 		.Bronze {
+			background-color: #a63c06;
 			height: 6rem;
 			border-bottom-right-radius: 5px;
 		}
 	}
 
-	.Mention-Container {
+	.Github {
+		background-color: #fbb232;
+		border-radius: 3px;
+		display: grid;
+		place-items: center;
+		font-size: 2rem;
+		margin-top: 0.75rem;
 	}
 }
 
-// .text-Container {
-// 	background-color: #fbb232;
-// 	border-radius: 3px;
-// 	width: 100%;
-// 	display: flex;
-// 	justify-content: center;
-// 	align-items: center;
-// 	font-size: 2rem;
-// }
+@media (max-width: 767px) and (orientation: portrait) {
+	.Scoreboard-Container {
+		display: none;
+	}
+}
 
-// .Scores-Container {
-// 	color: black;
-// 	display: grid;
-// 	grid-template-rows: 1.5fr 5fr 2fr;
+@media (max-width: 767px) and (orientation: landscape) {
+	.Scoreboard-Container {
+		height: 100%;
+		width: 100%;
+		grid-template-rows: 1fr 3fr;
 
-// 	.Save-Container {
-// 		margin-top: 1rem;
+		.Podium-Container {
+			.Podium {
+				width: 6rem;
+				margin-inline: 2rem;
+			}
 
-// 		input {
-// 			width: 10rem;
-// 			height: 48px;
-// 			border-top-left-radius: 3px;
-// 			border-bottom-left-radius: 3px;
-// 			border: 1px solid black;
-// 			color: black;
-// 			padding-left: 0.5rem;
-// 			font-size: 1rem;
-// 			border-right: none;
-// 		}
+			.Gold {
+				height: 7rem;
+			}
 
-// 		button {
-// 			background-color: #382650;
-// 			width: 5rem;
-// 			height: 50px;
-// 			border: none;
-// 			border-top-right-radius: 3px;
-// 			border-bottom-right-radius: 3px;
-// 			transition: opacity 0.15s;
-// 		}
+			.Silver {
+				height: 5rem;
+			}
 
-// 		button:hover {
-// 			opacity: 90%;
-// 		}
+			.Bronze {
+				height: 3rem;
+			}
+		}
 
-// 		button:active {
-// 			opacity: 80%;
-// 		}
-// 	}
-
-// 	.Podium-Container {
-// 		display: flex;
-// 		align-items: end;
-// 		justify-content: center;
-// 		padding-top: 6rem;
-
-// 		.Podium {
-// 			width: 11rem;
-// 			border-top-left-radius: 3px;
-// 			border-top-right-radius: 3px;
-// 			display: flex;
-// 			justify-content: center;
-// 			position: relative;
-
-// 			.place {
-// 				background-color: rgba(255, 255, 2555, 0.4);
-// 				width: 3rem;
-// 				height: 3rem;
-// 				display: flex;
-// 				justify-content: center;
-// 				align-items: center;
-// 				border-radius: 50%;
-// 				margin-top: 2rem;
-// 			}
-
-// 			.name {
-// 				position: absolute;
-// 				color: black;
-// 				top: -3rem;
-// 			}
-// 		}
-
-// 		.Gold {
-// 			background-color: #ffd100;
-// 			height: 16rem;
-
-// 			.name {
-// 				text-shadow: 0 0 10px #ffd100;
-// 			}
-// 		}
-
-// 		.Silver {
-// 			background-color: #d6d6d6;
-// 			height: 12rem;
-
-// 			.name {
-// 				text-shadow: 0 0 10px #d6d6d6;
-// 			}
-// 		}
-
-// 		.Bronze {
-// 			background-color: #c36f09;
-// 			height: 8rem;
-
-// 			.name {
-// 				text-shadow: 0 0 10px #c36f09;
-// 			}
-// 		}
-// 	}
-
-// 	.Mention-Container {
-// 		color: black;
-
-// 		.Mention {
-// 			margin-left: 25%;
-// 			color: black;
-// 			display: flex;
-// 			align-items: start;
-// 			font-size: 1.6rem;
-// 		}
-// 	}
-// }
+		.Scores-Container {
+			grid-template-rows: 1fr 3fr;
+			.Github {
+				display: none;
+			}
+		}
+	}
+}

@@ -22,12 +22,23 @@ const Scoreboard = (props) => {
 		} else alert("You cant save your score twice.");
 	};
 
+	let scoreboard = [];
+	for (let i = 0; i < localStorage.length; i++) {
+		scoreboard.push([
+			localStorage.key(i),
+			localStorage.getItem(localStorage.key(i)),
+		]);
+	}
+	scoreboard = scoreboard.sort((a, b) => a[1] - b[1]).reverse();
+
 	return (
 		<div className="Scoreboard-Container">
 			<div className="text-Container">
 				<p>
-					You scored {score} points! That places you in _ place
-					locally.
+					You scored {score} points!{" "}
+					{scoreboard.length >= 3 && score > scoreboard[2][1]
+						? "That gets you on the podium!"
+						: "That doesn't quite get you on the podium."}
 				</p>
 			</div>
 			<div className="Scores-Container">
@@ -39,24 +50,33 @@ const Scoreboard = (props) => {
 				</div>
 				<div className="Podium-Container">
 					<div className="Podium Silver">
-						<p className="name">Jake</p>
+						<p className="name">
+							{scoreboard.length > 1
+								? scoreboard[1][0] + " - " + scoreboard[1][1]
+								: " "}
+						</p>
 						<p className="place">2</p>
 					</div>
 					<div className="Podium Gold">
-						<p className="name">Jake</p>
+						<p className="name">
+							{scoreboard.length > 0
+								? scoreboard[0][0] + " - " + scoreboard[0][1]
+								: " "}
+						</p>
 						<p className="place">1</p>
 					</div>
 					<div className="Podium Bronze">
-						<p className="name">Jake</p>
+						<p className="name">
+							{scoreboard.length > 2
+								? scoreboard[2][0] + " - " + scoreboard[2][1]
+								: " "}
+						</p>
 						<p className="place">3</p>
 					</div>
 				</div>
-				<div className="Mention-Container">
-					<div className="Mention">4</div>
-					<div className="Mention">5</div>
-					<div className="Mention">6</div>
-					<div className="Mention">7</div>
-					<div className="Mention">8</div>
+				<div className="Github">
+					Try out some of my other projects{" "}
+					<a href="https://github.com/jaychkub/">here</a>
 				</div>
 			</div>
 		</div>

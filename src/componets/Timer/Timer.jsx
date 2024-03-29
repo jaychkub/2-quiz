@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 import "./Timer.scss";
 
 const Timer = ({ resetTimer, nextQuestion, penalty }) => {
-	const [timeLeft, setTimeLeft] = useState(15);
+	const [timeLeft, setTimeLeft] = useState(20);
 	const [shouldReset, setShouldReset] = useState(false);
 
 	useEffect(() => {
 		if (shouldReset) {
-			setTimeLeft(15);
+			setTimeLeft(20);
 			setShouldReset(false);
 		}
 
@@ -22,11 +22,11 @@ const Timer = ({ resetTimer, nextQuestion, penalty }) => {
 	}, [timeLeft, shouldReset]);
 
 	useEffect(() => {
-		setShouldReset(true);
+		if (resetTimer) setShouldReset(true);
 	}, [resetTimer]);
 
 	useEffect(() => {
-		if (penalty) setTimeLeft(timeLeft - 5);
+		if (penalty) setTimeLeft((prevTimeLeft) => prevTimeLeft - 5);
 	}, [penalty]);
 
 	return <p className="Timer">{timeLeft}</p>;

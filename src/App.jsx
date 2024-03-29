@@ -4,6 +4,17 @@ import "./App.scss";
 import Quiz from "./componets/Quiz/Quiz";
 import Scoreboard from "./componets/Scoreboard/Scoreboard";
 
+import QUESTION1 from "./images/question-1.jpg";
+import QUESTION2 from "./images/scorpio.png";
+import QUESTION3 from "./images/gemini.png";
+import QUESTION4 from "./images/libra.png";
+import QUESTION5 from "./images/cancer.png";
+import QUESTION6 from "./images/leo.png";
+import QUESTION7 from "./images/aquarius.png";
+import QUESTION8 from "./images/virgo.png";
+import QUESTION9 from "./images/capricorn.png";
+import QUESTION0 from "./images/pisces.png";
+
 const questions = [
 	{
 		question: "Which Zodiac sign is represented by the Ram?",
@@ -12,6 +23,7 @@ const questions = [
 		c: "Gemini",
 		d: "Cancer",
 		correct: "b",
+		image: QUESTION1,
 	},
 	{
 		question: "Which sign is known as the Scorpion?",
@@ -20,6 +32,7 @@ const questions = [
 		c: "Scorpio",
 		d: "Capricorn",
 		correct: "c",
+		image: QUESTION2,
 	},
 	{
 		question: "The Twins represent which Zodiac sign?",
@@ -28,6 +41,7 @@ const questions = [
 		c: "Virgo",
 		d: "Aquarius",
 		correct: "b",
+		image: QUESTION3,
 	},
 	{
 		question: "Which sign is symbolized by the Scales?",
@@ -36,6 +50,7 @@ const questions = [
 		c: "Taurus",
 		d: "Leo",
 		correct: "a",
+		image: QUESTION4,
 	},
 	{
 		question: "The Crab is the symbol for which Zodiac sign?",
@@ -44,6 +59,7 @@ const questions = [
 		c: "Sagittarius",
 		d: "Capricorn",
 		correct: "a",
+		image: QUESTION5,
 	},
 	{
 		question: "Which sign is represented by the Lion?",
@@ -52,6 +68,7 @@ const questions = [
 		c: "Aquarius",
 		d: "Aries",
 		correct: "b",
+		image: QUESTION6,
 	},
 	{
 		question: "The Water Bearer symbolizes which Zodiac sign?",
@@ -60,6 +77,7 @@ const questions = [
 		c: "Scorpio",
 		d: "Pisces",
 		correct: "b",
+		image: QUESTION7,
 	},
 	{
 		question: "Which sign is represented by the Maiden?",
@@ -68,6 +86,7 @@ const questions = [
 		c: "Capricorn",
 		d: "Sagittarius",
 		correct: "b",
+		image: QUESTION8,
 	},
 	{
 		question: "The Goat is the symbol for which Zodiac sign?",
@@ -76,6 +95,7 @@ const questions = [
 		c: "Pisces",
 		d: "Aries",
 		correct: "a",
+		image: QUESTION9,
 	},
 	{
 		question: "The Fish represent which Zodiac sign?",
@@ -84,6 +104,7 @@ const questions = [
 		c: "Scorpio",
 		d: "Aquarius",
 		correct: "a",
+		image: QUESTION0,
 	},
 ];
 

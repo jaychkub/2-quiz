@@ -5,8 +5,6 @@ import "./Quiz.scss";
 import Answer from "./Answer/Answer";
 import Timer from "../Timer/Timer";
 
-import QUESTION1 from "../../images/question-1.jpg";
-
 const Quiz = (props) => {
 	const question = props.question;
 	const nextQuestion = props.nextQuestion;
@@ -21,11 +19,11 @@ const Quiz = (props) => {
 	};
 
 	const handlePenalty = () => {
-		return;
+		return true;
 	};
 
 	const handleTimerReset = () => {
-		return;
+		return true;
 	};
 
 	return (
@@ -39,7 +37,7 @@ const Quiz = (props) => {
 				/>
 			</div>
 			<div className="Picture-Container">
-				<img src={QUESTION1} alt="" />
+				<img src={question["image"]} alt="" />
 			</div>
 			<div className="Answer-Container">
 				<Answer

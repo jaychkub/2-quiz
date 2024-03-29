@@ -7,40 +7,61 @@
 	grid-template-rows: 1.5fr 5fr 2fr;
 	margin: auto;
 	padding: 0.75rem;
-}
 
-.Question-Container {
-	// background: linear-gradient(
-	// 	45deg,
-	// 	rgba(182, 69, 149, 1) 0%,
-	// 	rgba(30, 28, 77, 1) 25%,
-	// 	rgba(105, 42, 97, 1) 50%,
-	// 	rgba(248, 165, 87, 1) 92%
-	// );
-	background-color: #fbb232;
-	border-radius: 3px;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 2rem;
-	position: relative;
-}
+	.Question-Container {
+		// background: linear-gradient(
+		// 	45deg,
+		// 	rgba(182, 69, 149, 1) 0%,
+		// 	rgba(30, 28, 77, 1) 25%,
+		// 	rgba(105, 42, 97, 1) 50%,
+		// 	rgba(248, 165, 87, 1) 92%
+		// );
+		background-color: #fbb232;
+		border-radius: 3px;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: 2rem;
 
-.Picture-Container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
+		p {
+			margin-left: auto;
+		}
+	}
 
-	img {
-		height: 10rem;
+	.Picture-Container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+
+		img {
+			height: 15rem;
+		}
+	}
+
+	.Answer-Container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		gap: 0.3rem;
 	}
 }
 
-.Answer-Container {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
-	gap: 0.3rem;
+@media (max-width: 767px) and (orientation: portrait) {
+	.Quiz-Container {
+		display: none;
+	}
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+	.Quiz-Container {
+		height: 100%;
+		width: 100%;
+		grid-template-rows: 1fr 1fr;
+
+		.Picture-Container {
+			display: none;
+		}
+	}
 }
