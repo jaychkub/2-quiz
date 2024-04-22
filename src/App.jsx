@@ -15,6 +15,8 @@ import QUESTION8 from "./images/virgo.png";
 import QUESTION9 from "./images/capricorn.png";
 import QUESTION0 from "./images/pisces.png";
 
+import rotate from "./images/rotate.png";
+
 const questions = [
 	{
 		question: "Which Zodiac sign is represented by the Ram?",
@@ -131,7 +133,7 @@ function App() {
 				<Scoreboard score={score} />
 			)}
 
-			<p className="AI">Powered by AI.</p>
+			{/* <p className="AI">Powered by AI.</p> */}
 		</div>
 	);
 }

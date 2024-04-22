@@ -2,11 +2,15 @@ import { useState, useEffect } from "react";
 
 import "./Timer.scss";
 
-const Timer = ({ resetTimer, nextQuestion, penalty }) => {
+const Timer = ({ resetTimer, nextQuestion, penalty, isPaused }) => {
 	const [timeLeft, setTimeLeft] = useState(20);
 	const [shouldReset, setShouldReset] = useState(false);
 
 	useEffect(() => {
+		if (isPaused) {
+			return;
+		}
+
 		if (shouldReset) {
 			setTimeLeft(20);
 			setShouldReset(false);

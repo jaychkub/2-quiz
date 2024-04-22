@@ -123,39 +123,83 @@
 	}
 }
 
-@media (max-width: 767px) and (orientation: portrait) {
+// Mobile PORTRAIT
+@media (max-width: 1050px) and (orientation: portrait) {
 	.Scoreboard-Container {
-		display: none;
-	}
-}
-
-@media (max-width: 767px) and (orientation: landscape) {
-	.Scoreboard-Container {
-		height: 100%;
 		width: 100%;
-		grid-template-rows: 1fr 3fr;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		box-sizing: border-box;
 
-		.Podium-Container {
-			.Podium {
-				width: 6rem;
-				margin-inline: 2rem;
-			}
-
-			.Gold {
-				height: 7rem;
-			}
-
-			.Silver {
-				height: 5rem;
-			}
-
-			.Bronze {
-				height: 3rem;
-			}
+		.text-Container {
+			flex: 1;
+			max-height: 100px;
 		}
 
 		.Scores-Container {
-			grid-template-rows: 1fr 3fr;
+			flex: 1;
+
+			.Podium-Container {
+				.Podium {
+					max-width: 7rem;
+				}
+			}
+		}
+
+		.Github {
+			flex: 1;
+			max-height: 100px;
+			margin-top: 75px;
+			box-sizing: border-box;
+			padding: 0.75rem;
+		}
+	}
+}
+
+// Mobile LANDSCAPE
+@media (max-width: 1050px) and (orientation: landscape) {
+	.Scoreboard-Container {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+
+		.text-Container {
+			flex: 1;
+		}
+
+		.Scores-Container {
+			flex: 3;
+			display: flex;
+			flex-direction: column;
+
+			.Save-Container {
+				flex: 1;
+			}
+
+			.Podium-Container {
+				flex: 3;
+
+				.Podium {
+					width: 6rem;
+					margin-inline: 2rem;
+				}
+
+				.Gold {
+					height: 7rem;
+				}
+
+				.Silver {
+					height: 5rem;
+				}
+
+				.Bronze {
+					height: 3rem;
+				}
+			}
+
 			.Github {
 				display: none;
 			}

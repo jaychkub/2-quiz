@@ -36,9 +36,9 @@ const Scoreboard = (props) => {
 			<div className="text-Container">
 				<p>
 					You scored {score} points!{" "}
-					{scoreboard.length >= 3 && score > scoreboard[2][1]
+					{/* {scoreboard.length <= 3 && score > scoreboard[2][1]
 						? "That gets you on the podium!"
-						: "That doesn't quite get you on the podium."}
+						: "That doesn't quite get you on the podium."} */}
 				</p>
 			</div>
 			<div className="Scores-Container">
@@ -75,8 +75,10 @@ const Scoreboard = (props) => {
 					</div>
 				</div>
 				<div className="Github">
-					Try out some of my other projects{" "}
-					<a href="https://github.com/jaychkub/">here</a>
+					<p>
+						Try out some of my other projects{" "}
+						<a href="https://github.com/jaychkub/">here</a>
+					</p>
 				</div>
 			</div>
 		</div>
